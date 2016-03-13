@@ -1,6 +1,6 @@
-package com.asi.draw1;
+package com.asi.draw2;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.SeekBar;
@@ -8,10 +8,10 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
-    private int num_sides=5;
-    private int min_sides=5;
+    private int num_lines=5;
+    private int min_lines=5;
     private SeekBar seekBar;
     private TextView textView;
     private DrawView drawView;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
                 progress = progressValue;
-                setSides(seekBar.getProgress()+min_sides);
+                setSides(seekBar.getProgress()+min_lines);
                 //Toast.makeText(getApplicationContext(), "Changing slider value", Toast.LENGTH_SHORT).show();
             }
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // Initialize Display
-       setSides(min_sides);
+       setSides(min_lines);
      }
 
     public void onClickB1(View view) {setSides(5);}
@@ -60,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setSides(int n) {
-        num_sides = n;
+        num_lines = n;
 
-        drawView.set_num_sides(num_sides);
+        drawView.set_num_sides(num_lines);
         drawView.postInvalidate();
-        seekBar.setProgress(n - min_sides);
+        seekBar.setProgress(n - min_lines);
         //textView.setText("Number of Sides (" + num_sides + "/" + (min_sides + seekBar.getMax())+")");
-        textView.setText("Number of Sides (" + num_sides + ")");
+        textView.setText("Number of Lines (" + num_lines + ")");
     }
 }

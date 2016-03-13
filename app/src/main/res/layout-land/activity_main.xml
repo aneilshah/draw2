@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.asi.draw1.MainActivity">
+    tools:context="com.asi.draw2.MainActivity">
 
     <TextView
         android:id="@+id/title"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/view_text" />
 
-    <com.asi.draw1.DrawView
+    <com.asi.draw2.DrawView
         android:id="@+id/draw_view"
         android:layout_below="@+id/title"
         android:layout_marginTop="10dp"

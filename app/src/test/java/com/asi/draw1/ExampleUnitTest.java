@@ -1,4 +1,4 @@
-package com.asi.draw1;
+package com.asi.draw2;
 
 import org.junit.Test;
 
